@@ -10,7 +10,7 @@ public class OverlayManager: OverlayManagerProtocol {
     private let loadingHandler: LoadingHandler
     private let alertHandler: AlertHandler
 
-    public init(appDependency: AppDependency) {
+    public init(appDependency: WindowDependencyProtocol) {
         self.loadingHandler = appDependency.makeLoadingHandler()
         self.alertHandler = appDependency.makeAlertHandler()
     }
