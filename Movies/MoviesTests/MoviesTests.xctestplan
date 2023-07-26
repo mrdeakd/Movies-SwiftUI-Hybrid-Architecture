@@ -1,0 +1,49 @@
+{
+  "configurations" : [
+    {
+      "id" : "C6000F6D-FCD4-48F6-8285-3035A5F6159B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Movies\/Movies.xcodeproj",
+        "identifier" : "5582088F2A7134790020C3BF",
+        "name" : "MoviesTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:UI\/UI.xcodeproj",
+        "identifier" : "558208292A6ECCF10020C3BF",
+        "name" : "UITests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Utils\/Utils.xcodeproj",
+        "identifier" : "558208802A6F0C6A0020C3BF",
+        "name" : "UtilsTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Common\/Common.xcodeproj",
+        "identifier" : "558209402A714CA80020C3BF",
+        "name" : "CommonTests"
+      }
+    }
+  ],
+  "version" : 1
+}

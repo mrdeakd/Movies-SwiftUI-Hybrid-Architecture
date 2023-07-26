@@ -1,0 +1,41 @@
+module ScriptPhase
+  def self.swiftlint
+    {
+      :name => '🚨 SwiftLint',
+      :script => Script.swiftlint,
+      :execution_position => :before_compile,
+    }
+  end
+
+  def self.swiftgen
+    {
+      :name => '🛠️ SwiftGen',
+      :script => Script.swiftgen,
+      :execution_position => :before_compile
+    }
+  end
+end
+
+module Script
+  def self.swiftgen
+    <<~EOS
+      if [[ -f "${PODS_ROOT}/SwiftGen/bin/swiftgen" ]]; then
+        "${PODS_ROOT}/SwiftGen/bin/swiftgen" config run --config "${PRODUCT_NAME}/swiftgen.yml"
+      else
+        echo "error: SwiftGen is not installed. Run 'bundle exec pod install --repo-update' to install it."
+        return -1
+      fi
+    EOS
+  end
+  def self.swiftlint
+    <<~EOS
+      cd $PRODUCT_NAME
+      if [[ -f "${PODS_ROOT}/SwiftLint/swiftlint" ]]; then
+        "${PODS_ROOT}/SwiftLint/swiftlint"
+      else
+        echo "error: SwiftLint is not installed. Run 'pod install --repo-update' to install it."
+        return -1
+      fi
+    EOS
+  end
+end 

@@ -1,0 +1,26 @@
+fastlane_require 'dotenv'
+default_platform(:ios)
+
+platform :ios do
+  workspace = "Movies.xcworkspace"
+  scheme = "MoviesTests"
+
+  desc "Run Movies Tests"
+  lane :test do
+    scan(
+      clean: true,
+      workspace: "#{workspace}",
+      scheme: "#{scheme}",
+      devices: ["iPhone 14 Pro"],
+      output_style: "basic",
+      include_simulator_logs: false
+    )
+  end
+	
+  desc "Build App for Simulator"
+  lane :build_app_simulator do
+    Dir.chdir("..") do
+      sh "./fastlane/create_simulator_build.sh"
+    end
+  end
+end

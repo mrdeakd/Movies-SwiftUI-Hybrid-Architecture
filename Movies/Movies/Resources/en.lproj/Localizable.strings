@@ -1,0 +1,5 @@
+// MARK: - SF Symbols
+"InfoItemView.xmark" = "xmark";
+
+// MARK: - Error
+"Error.default.title" = "Check the error and try again";
