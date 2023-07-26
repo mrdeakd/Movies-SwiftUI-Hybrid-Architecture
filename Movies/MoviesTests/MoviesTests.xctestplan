@@ -43,6 +43,22 @@
         "identifier" : "558209402A714CA80020C3BF",
         "name" : "CommonTests"
       }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DataLayer\/DataLayer.xcodeproj",
+        "identifier" : "55820A3F2A719DC20020C3BF",
+        "name" : "DataLayerTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:NetworkingLayer\/NetworkingLayer.xcodeproj",
+        "identifier" : "558209F72A7197640020C3BF",
+        "name" : "NetworkingLayerTests"
+      }
     }
   ],
   "version" : 1

@@ -3,3 +3,14 @@
 
 // MARK: - Error
 "Error.default.title" = "Check the error and try again";
+
+// MARK: - MoviesScreenView
+"MoviesScreenView.navigation.title" = "Movies";
+
+// MARK: - MovieListItem
+"MovieListItemView.star.name" = "star.fill";
+
+// MARK: - MovieDetailsScreenView
+"MovieDetailsScreenView.star.name" = "star.fill";
+"MovieDetailsScreenView.plus.name" = "plus";
+"MovieDetailsScreenView.overview.title" = "Overview";

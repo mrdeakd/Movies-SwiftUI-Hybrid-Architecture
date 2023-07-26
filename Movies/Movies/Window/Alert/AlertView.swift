@@ -3,7 +3,7 @@ import UI
 
 public struct AlertView: View {
     enum Layout {
-        static let cornerRadius: CGFloat = .su12
+        static let cornerRadius: CGFloat = .s12
     }
 
     @EnvironmentObject var handler: AlertHandler

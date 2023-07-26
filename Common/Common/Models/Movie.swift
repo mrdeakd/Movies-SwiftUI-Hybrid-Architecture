@@ -1,7 +1,7 @@
 import Foundation
 
-public struct Movie: Identifiable {
-    public struct Image {
+public struct Movie: Identifiable, Equatable {
+    public struct Image: Equatable {
         public let small: String
         public let large: String
 

@@ -1,44 +1,44 @@
 import SwiftUI
 
 public extension CGFloat {
-    /// 4 pt
-    static let su4: Double = 4
-    /// 6 pt
-    static let su6: Double = 6
-    /// 8 pt
-    static let su8: Double = 8
-    /// 10 pt
-    static let su10: Double = 10
-    /// 12 pt
-    static let su12: Double = 12
-    /// 14 pt
-    static let su14: Double = 14
-    /// 16 pt
-    static let su16: Double = 16
-    /// 20 pt
-    static let su20: Double = 20
-    /// 22 pt
-    static let su22: Double = 22
-    /// 24 pt
-    static let su24: Double = 24
-    /// 28 pt
-    static let su28: Double = 28
-    /// 32 pt
-    static let su32: Double = 32
-    /// 34 pt
-    static let su34: Double = 34
-    /// 40 pt
-    static let su40: Double = 40
-    /// 42 pt
-    static let su42: Double = 42
-    /// 44 pt
-    static let su44: Double = 44
-    /// 48 pt
-    static let su48: Double = 48
-    /// 56 pt
-    static let su56: Double = 56
-    /// 64 pt
-    static let su64: Double = 64
-    /// 72 pt
-    static let su72: Double = 72
+    // 4
+    static let s4: CGFloat = 4
+    // 6
+    static let s6: CGFloat = 6
+    // 8
+    static let s8: CGFloat = 8
+    // 10
+    static let s10: CGFloat = 10
+    // 12
+    static let s12: CGFloat = 12
+    // 14
+    static let s14: CGFloat = 14
+    // 16
+    static let s16: CGFloat = 16
+    // 20
+    static let s20: CGFloat = 20
+    // 22
+    static let s22: CGFloat = 22
+    // 24
+    static let s24: CGFloat = 24
+    // 28
+    static let s28: CGFloat = 28
+    // 32
+    static let s32: CGFloat = 32
+    // 34
+    static let s34: CGFloat = 34
+    // 40
+    static let s40: CGFloat = 40
+    // 42
+    static let s42: CGFloat = 42
+    // 44
+    static let s44: CGFloat = 44
+    // 48
+    static let s48: CGFloat = 48
+    // 56
+    static let s56: CGFloat = 56
+    // 64
+    static let s64: CGFloat = 64
+    // 72
+    static let s72: CGFloat = 72
 }

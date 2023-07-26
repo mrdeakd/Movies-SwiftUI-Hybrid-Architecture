@@ -15,7 +15,7 @@ public struct ActivityIndicator: View {
 
     @State private var animate = false
 
-    private let style = StrokeStyle(lineWidth: .su6, lineCap: .round)
+    private let style = StrokeStyle(lineWidth: .s6, lineCap: .round)
     private let color = Asset.lightGreen.swiftUIColor
 
     public var body: some View {

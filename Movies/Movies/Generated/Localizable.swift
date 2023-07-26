@@ -20,6 +20,32 @@ internal enum Rsc {
     /// xmark
     internal static let xmark = Rsc.tr("Localizable", "InfoItemView.xmark", fallback: "xmark")
   }
+  internal enum MovieDetailsScreenView {
+    internal enum Overview {
+      /// Overview
+      internal static let title = Rsc.tr("Localizable", "MovieDetailsScreenView.overview.title", fallback: "Overview")
+    }
+    internal enum Plus {
+      /// plus
+      internal static let name = Rsc.tr("Localizable", "MovieDetailsScreenView.plus.name", fallback: "plus")
+    }
+    internal enum Star {
+      /// star.fill
+      internal static let name = Rsc.tr("Localizable", "MovieDetailsScreenView.star.name", fallback: "star.fill")
+    }
+  }
+  internal enum MovieListItemView {
+    internal enum Star {
+      /// star.fill
+      internal static let name = Rsc.tr("Localizable", "MovieListItemView.star.name", fallback: "star.fill")
+    }
+  }
+  internal enum MoviesScreenView {
+    internal enum Navigation {
+      /// Movies
+      internal static let title = Rsc.tr("Localizable", "MoviesScreenView.navigation.title", fallback: "Movies")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
