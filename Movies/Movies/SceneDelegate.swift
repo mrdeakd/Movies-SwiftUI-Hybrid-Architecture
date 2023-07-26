@@ -1,9 +1,9 @@
 import SwiftUI
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    private var appDependency = AppDependency()
+    private var appDependency = MoviesDependency()
     private var windowManager: WindowManager?
-    private var coordinator: AppCoordinator?
+    private var coordinator: Coordinator?
 
     var mainWindow: UIWindow?
     var loadingWindow: UIWindow?
@@ -27,7 +27,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootNavigationController = appDependency.makeRootNavigationController()
         windowManager = WindowManager(appDependency: appDependency, navigationController: rootNavigationController)
 
-        coordinator = AppCoordinator(
+        coordinator = MoviesCoordinator(
             dependencySolver: appDependency,
             navigationController: rootNavigationController,
             onFinished: {}

@@ -1,12 +1,8 @@
 import Common
 import SwiftUI
 
-protocol MoviesScreenViewModelProtocol: ObservableObject {
-    var movies: [Movie] { get }
-}
-
-struct MoviesScreen<ViewModel: MoviesScreenViewModelProtocol>: View {
-    @ObservedObject var viewModel: ViewModel
+struct MoviesScreenView<ViewModel: MoviesScreenViewModelProtocol>: View {
+    @StateObject var viewModel: ViewModel
 
     var body: some View {
         NavigationView {
@@ -21,6 +17,7 @@ struct MoviesScreen<ViewModel: MoviesScreenViewModelProtocol>: View {
             .navigationTitle("Movies")
         }
         .navigationViewStyle(.stack)
+        .onAppear { viewModel.onAppear() }
     }
 
     func destinationView(using movie: Movie) -> some View {
@@ -28,12 +25,12 @@ struct MoviesScreen<ViewModel: MoviesScreenViewModelProtocol>: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MoviesScreenView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MoviesScreen(viewModel: MoviesScreenViewModelMock())
+            MoviesScreenView(viewModel: MoviesScreenViewModelMock())
                 .preferredColorScheme(.light)
-            MoviesScreen(viewModel: MoviesScreenViewModelMock())
+            MoviesScreenView(viewModel: MoviesScreenViewModelMock())
                 .preferredColorScheme(.dark)
         }
     }
