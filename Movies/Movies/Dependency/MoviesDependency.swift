@@ -9,7 +9,7 @@ public class MoviesDependency: MoviesDependencyProtocol {
     private let alertHandler = AlertHandler()
 
     public func makeMoviesRepository() -> MoviesRepositoryProtocol {
-        AppRepository()
+        MoviesRepository()
     }
 
     public func makeOverlayManager() -> OverlayManagerProtocol {
