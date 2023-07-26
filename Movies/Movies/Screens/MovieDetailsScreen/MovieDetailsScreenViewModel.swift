@@ -1,12 +1,26 @@
 import Common
-import Foundation
+import SwiftUI
 
-class MovieDetailsScreenViewModel: ObservableObject, MovieDetailsScreenViewModelProtocol {
-    @Published var movie: Movie
+protocol MovieDetailsScreenViewModelProtocol: ObservableObject {
+    var movie: Movie { get }
 
-    init(movie: Movie) {
-        self.movie = movie
+    func markMovie()
+}
+
+class MovieDetailsScreenViewModel: MovieDetailsScreenViewModelProtocol {
+    private let navigation: MovieDetailsNavigation
+
+    @Binding var movie: Movie
+
+    init(
+        navigation: MovieDetailsNavigation,
+        movie: Binding<Movie>
+    ) {
+        self.navigation = navigation
+        self._movie = movie
     }
 
-    func markMovie() {}
+    func markMovie() {
+        movie.isMarked.toggle()
+    }
 }

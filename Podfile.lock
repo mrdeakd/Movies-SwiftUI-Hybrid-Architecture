@@ -1,20 +1,26 @@
 PODS:
+  - Sourcery (2.0.2):
+    - Sourcery/CLI-Only (= 2.0.2)
+  - Sourcery/CLI-Only (2.0.2)
   - SwiftGen (6.6.2)
   - SwiftLint (0.52.4)
 
 DEPENDENCIES:
+  - Sourcery
   - SwiftGen
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Sourcery
     - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Sourcery: 9ae7eb711f830e8c3c02b98dc28fbd7e32e9d971
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
 
-PODFILE CHECKSUM: 4456937047b5523a27d07ff8e76418f055ffedad
+PODFILE CHECKSUM: 8507b92ccf4ad708ab131996d31d7eaf2ae467db
 
 COCOAPODS: 1.12.1

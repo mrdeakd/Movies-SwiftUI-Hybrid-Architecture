@@ -1,5 +1,6 @@
 import Foundation
 
+// sourcery: AutoMockable
 protocol MoviesScreenNavigationProtocol {
     var onFinish: (() -> Void)? { get set }
 }

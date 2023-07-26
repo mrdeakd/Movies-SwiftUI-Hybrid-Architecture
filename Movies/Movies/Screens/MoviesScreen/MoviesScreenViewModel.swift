@@ -3,17 +3,17 @@ import Foundation
 import Utils
 
 protocol MoviesScreenViewModelProtocol: ObservableObject {
-    var movies: [Movie] { get }
+    var movies: [Movie] { get set }
 
-    func onAppear()
+    func fetchMovies() async
 }
 
 final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
-    @Published var movies: [Movie] = []
-
     private let navigation: MoviesScreenNavigationProtocol
     private let repository: MoviesRepositoryProtocol
     private let overlayManager: OverlayManagerProtocol
+
+    @Published var movies: [Movie] = []
 
     init(
         navigation: MoviesScreenNavigationProtocol,
@@ -25,18 +25,11 @@ final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
         self.overlayManager = overlayManager
     }
 
-    func onAppear() {
-        Task { await fetchMovies() }
-    }
-
-    private func fetchMovies() async {
-        await overlayManager.asyncRequestWithLoading(request: await load()) { value in
-            print(value)
+    func fetchMovies() async {
+        await overlayManager.asyncRequestWithLoading(
+            request: try await repository.getMostPopularMovies()
+        ) { [weak self] movies in
+            self?.movies = movies
         }
-    }
-
-    func load() async -> String {
-        try? await Task.sleep(seconds: 2)
-        return "Loading"
     }
 }

@@ -1,0 +1,12 @@
+sources:
+  - Movies
+templates:
+  - ../Templates/automockable.stencil
+output:
+  MoviesMocks/Mock.swift
+
+args:
+  autoMockableImports:
+    - Common
+  autoMockableTestableImports:
+    - Movies
