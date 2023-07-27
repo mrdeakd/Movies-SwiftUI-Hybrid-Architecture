@@ -86,7 +86,7 @@
 		0E1A26B316828C8EF13ABDBC /* Pods_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30989B091DCBD8B47ABCD8A9 /* Pods-Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.debug.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.debug.xcconfig"; sourceTree = "<group>"; };
 		456F394FB7C944380C68798B /* Pods_Movies_MoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movies_MoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		554C29B92A73099600E0BB6A /* ApiConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiConfig.xcconfig; sourceTree = "<group>"; };
+		554C29BA2A730EF300E0BB6A /* ApiConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiConfig.xcconfig; sourceTree = "<group>"; };
 		558208902A7134790020C3BF /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		558208922A7134790020C3BF /* MoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTests.swift; sourceTree = "<group>"; };
 		5582089F2A7136BB0020C3BF /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -387,7 +387,6 @@
 				558208912A7134790020C3BF /* MoviesTests */,
 				4CB17861A48A673CE081CBDB /* Pods */,
 				9F477C0927BA5CF800DAE295 /* Products */,
-				554C29B92A73099600E0BB6A /* ApiConfig.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -411,6 +410,7 @@
 				558208B02A7137BB0020C3BF /* Resources */,
 				558208BE2A7138170020C3BF /* Screens */,
 				558208C42A7139140020C3BF /* Window */,
+				554C29BA2A730EF300E0BB6A /* ApiConfig.xcconfig */,
 				558208BB2A7137F50020C3BF /* AppDelegate.swift */,
 				558208AB2A71377B0020C3BF /* Info.plist */,
 				558208BA2A7137F50020C3BF /* SceneDelegate.swift */,
@@ -720,7 +720,7 @@
 		};
 		9F477C1427BA5CF900DAE295 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 554C29B92A73099600E0BB6A /* ApiConfig.xcconfig */;
+			baseConfigurationReference = 554C29BA2A730EF300E0BB6A /* ApiConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -783,7 +783,7 @@
 		};
 		9F477C1527BA5CF900DAE295 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 554C29B92A73099600E0BB6A /* ApiConfig.xcconfig */;
+			baseConfigurationReference = 554C29BA2A730EF300E0BB6A /* ApiConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
