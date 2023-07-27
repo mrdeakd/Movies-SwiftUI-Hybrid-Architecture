@@ -70,7 +70,7 @@ class MoviesScreenViewModelTests: XCTestCase {
         sut.fetchMoviesPublisher()
 
         /// Then
-        wait(for: [getMostPopularMoviesStubCalled])
+        wait(for: [getMostPopularMoviesStubCalled], timeout: .defaultTestExpectationTimeout)
         XCTAssertTrue(repository.getMostPopularMoviesPublisherCalled)
         XCTAssertEqual(repository.getMostPopularMoviesPublisherCallsCount, 1)
         XCTAssertEqual(sut.movies, Movie.movieListMock)
