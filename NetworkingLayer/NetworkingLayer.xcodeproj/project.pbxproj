@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554C299E2A72ADA200E0BB6A /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554C299D2A72ADA200E0BB6A /* Utils.framework */; };
+		554C299F2A72ADA200E0BB6A /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 554C299D2A72ADA200E0BB6A /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		558209F92A7197640020C3BF /* NetworkingLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558209F02A7197640020C3BF /* NetworkingLayer.framework */; };
 		558209FE2A7197640020C3BF /* NetworkingLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558209FD2A7197640020C3BF /* NetworkingLayerTests.swift */; };
 		55820A0C2A7197B70020C3BF /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A092A7197B60020C3BF /* RequestProtocol.swift */; };
@@ -39,9 +41,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		554C29A02A72ADA200E0BB6A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				554C299F2A72ADA200E0BB6A /* Utils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		04D09DEB64A5E477579F0F9A /* Pods_NetworkingLayer_NetworkingLayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkingLayer_NetworkingLayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B01E355B16C43E185F4252D /* Pods-NetworkingLayer-NetworkingLayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingLayer-NetworkingLayerTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkingLayer-NetworkingLayerTests/Pods-NetworkingLayer-NetworkingLayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		554C299D2A72ADA200E0BB6A /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		558209F02A7197640020C3BF /* NetworkingLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		558209F82A7197640020C3BF /* NetworkingLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		558209FD2A7197640020C3BF /* NetworkingLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLayerTests.swift; sourceTree = "<group>"; };
@@ -72,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554C299E2A72ADA200E0BB6A /* Utils.framework in Frameworks */,
 				B96759F34FADA10CADA9384C /* Pods_NetworkingLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +109,7 @@
 		09C3D7693ECC18EBC7834BB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				554C299D2A72ADA200E0BB6A /* Utils.framework */,
 				E1E80BD7CF5DE7AA14E0E47C /* Pods_NetworkingLayer.framework */,
 				04D09DEB64A5E477579F0F9A /* Pods_NetworkingLayer_NetworkingLayerTests.framework */,
 			);
@@ -256,6 +275,7 @@
 				558209EC2A7197640020C3BF /* Sources */,
 				558209ED2A7197640020C3BF /* Frameworks */,
 				558209EE2A7197640020C3BF /* Resources */,
+				554C29A02A72ADA200E0BB6A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
