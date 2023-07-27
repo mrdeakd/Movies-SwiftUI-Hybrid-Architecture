@@ -23,7 +23,8 @@ struct MovieDetailsScreenView<ViewModel: MovieDetailsScreenViewModelProtocol>: V
                 .overlay {
                     LinearGradient(
                         colors: [
-                            Color(uiColor: .systemBackground).opacity(MovieDetailsScreenViewLayout.opacity),
+                            Color(uiColor: .systemBackground)
+                                .opacity(MovieDetailsScreenViewLayout.opacity),
                             Color(uiColor: .systemBackground)
                         ],
                         startPoint: .center,
@@ -33,7 +34,7 @@ struct MovieDetailsScreenView<ViewModel: MovieDetailsScreenViewModelProtocol>: V
 
             VStack(spacing: .s16) {
                 Button(action: { viewModel.markMovie() }) {
-                    Image(systemName: viewModel.movie.isMarked ? "star.fill" : "plus")
+                    Image(systemName: viewModel.movie.isMarked ? Str.Star.name : Str.Plus.name)
                     .resizable()
                     .frame(
                         width: MovieDetailsScreenViewLayout.imageSize.width,

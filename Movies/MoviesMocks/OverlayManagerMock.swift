@@ -12,6 +12,14 @@ public class OverlayManagerMock: OverlayManagerProtocol {
         self.alertHandler = alertHandler
     }
 
+    public func showLoading() {
+        loadingHandler.showLoading()
+    }
+
+    public func hideLoading() {
+        loadingHandler.hideLoading()
+    }
+
     public func asyncRequestWithLoading<T>(
         request: () async throws -> T,
         onLoaded action: @escaping (T) -> Void

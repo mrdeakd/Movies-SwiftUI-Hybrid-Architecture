@@ -5,4 +5,7 @@ public protocol OverlayManagerProtocol {
         request: @autoclosure () async throws -> T,
         onLoaded action: @escaping (T) -> Void
     ) async
+
+    func showLoading()
+    func hideLoading()
 }

@@ -1,6 +1,7 @@
 import Foundation
 import os.log
 
+// swiftlint:disable function_parameter_count type_contents_order
 public final class AppLogger: Logger {
     public static let shared = AppLogger()
 
@@ -50,3 +51,4 @@ public final class AppLogger: Logger {
         self.appLogsEnabled = appLogsEnabled
     }
 }
+// swiftlint:enable function_parameter_count type_contents_order

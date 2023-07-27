@@ -1,2 +1,6 @@
 // MARK: - MostPopularMovieMapper
 "MostPopularMovieMapper.pictureUrl" = "https://image.tmdb.org/t/p/original/";
+
+// MARK: - DataLayerError
+"error.networkError.missingData" = "Missing data from network call";
+"error.networkError.missingDataComment" = "missingData";

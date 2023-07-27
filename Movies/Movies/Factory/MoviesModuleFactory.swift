@@ -1,13 +1,12 @@
+import Common
 import SwiftUI
-import UIKit
 
 protocol MoviesModuleFactoryProtocol {
-    func createMoviesScreen(
-        repository: MoviesRepositoryProtocol
-    ) -> (viewController: UIViewController, navigation: MoviesScreenNavigationProtocol)
+    func createMoviesScreen(repository: MoviesRepositoryProtocol)
+    -> (viewController: UIViewController, navigation: MoviesScreenNavigationProtocol)
 
-    func createMovieDetailsScreen(
-    ) -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol)
+    func createMovieDetailsScreen(movie: Binding<Movie>)
+    -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol)
 }
 
 final class MoviesModuleFactory: MoviesModuleFactoryProtocol {
@@ -31,11 +30,11 @@ final class MoviesModuleFactory: MoviesModuleFactoryProtocol {
         return (UIHostingController(rootView: view), navigation)
     }
 
-    func createMovieDetailsScreen() -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol) {
+    func createMovieDetailsScreen(movie: Binding<Movie>) -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol) {
         let navigation = MovieDetailsNavigation()
         let viewModel = MovieDetailsScreenViewModel(
             navigation: navigation,
-            movie: .constant(.movieListMock[0])
+            movie: movie
         )
         let view = MovieDetailsScreenView(viewModel: viewModel)
 

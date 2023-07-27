@@ -1,5 +1,6 @@
+import Common
 import Foundation
-import UIKit
+import SwiftUI
 
 public final class MoviesCoordinator: Coordinator {
     public var navigationController: UINavigationController
@@ -10,7 +11,7 @@ public final class MoviesCoordinator: Coordinator {
 
     private let dependecySolver: MoviesDependencyProtocol
 
-    public init(
+    init(
         dependencySolver: MoviesDependencyProtocol,
         navigationController: UINavigationController,
         onFinished: @escaping (() -> Void)
@@ -23,11 +24,28 @@ public final class MoviesCoordinator: Coordinator {
     }
 
     public func start() {
-        gotoMainScreen()
+        goToMoviesScreen()
     }
 
-    private func gotoMainScreen() {
+    private func goToMoviesScreen() {
         var module = factory.createMoviesScreen(repository: repository)
+
+        module.navigation.onFinish = {
+            print("Finished")
+        }
+
+        module.navigation.onNavigateToMovieDetails = { [weak self] movie in
+            self?.goToMovieDetailsScreen(movie: movie)
+        }
+
+        navigationController.pushViewController(
+            module.viewController,
+            animated: !navigationController.viewControllers.isEmpty
+        )
+    }
+
+    private func goToMovieDetailsScreen(movie: Binding<Movie>) {
+        var module = factory.createMovieDetailsScreen(movie: movie)
 
         module.navigation.onFinish = {
             print("Finished")

@@ -14,6 +14,14 @@ internal enum Rsc {
     /// https://image.tmdb.org/t/p/original/
     internal static let pictureUrl = Rsc.tr("Localizable", "MostPopularMovieMapper.pictureUrl", fallback: "https://image.tmdb.org/t/p/original/")
   }
+  internal enum Error {
+    internal enum NetworkError {
+      /// Missing data from network call
+      internal static let missingData = Rsc.tr("Localizable", "error.networkError.missingData", fallback: "Missing data from network call")
+      /// missingData
+      internal static let missingDataComment = Rsc.tr("Localizable", "error.networkError.missingDataComment", fallback: "missingData")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

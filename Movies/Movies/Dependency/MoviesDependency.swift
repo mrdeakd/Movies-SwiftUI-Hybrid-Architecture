@@ -1,26 +1,26 @@
 import Foundation
 
-public protocol MoviesDependencyProtocol: BaseDependency, WindowDependencyProtocol {
+protocol MoviesDependencyProtocol: BaseDependency, WindowDependencyProtocol {
     func makeMoviesRepository() -> MoviesRepositoryProtocol
 }
 
-public class MoviesDependency: MoviesDependencyProtocol {
+class MoviesDependency: MoviesDependencyProtocol {
     private let loadingHandler = LoadingHandler()
     private let alertHandler = AlertHandler()
 
-    public func makeMoviesRepository() -> MoviesRepositoryProtocol {
+    func makeMoviesRepository() -> MoviesRepositoryProtocol {
         MoviesRepository()
     }
 
-    public func makeOverlayManager() -> OverlayManagerProtocol {
+    func makeOverlayManager() -> OverlayManagerProtocol {
         OverlayManager(appDependency: self)
     }
 
-    public func makeLoadingHandler() -> LoadingHandler {
+    func makeLoadingHandler() -> LoadingHandler {
         loadingHandler
     }
 
-    public func makeAlertHandler() -> AlertHandler {
+    func makeAlertHandler() -> AlertHandler {
         alertHandler
     }
 }
