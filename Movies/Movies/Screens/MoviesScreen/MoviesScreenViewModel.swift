@@ -10,7 +10,6 @@ protocol MoviesScreenViewModelProtocol: ObservableObject {
     func fetchMovies() async
     func fetchMoviesPublisher()
 
-    func navigateToMovieDetails(_ selectedMovie: Movie)
 }
 
 final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
@@ -31,8 +30,8 @@ final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
         self.repository = repository
         self.overlayManager = overlayManager
 
-        fetchMoviesPublisher()
-        //Task { await fetchMovies() }
+        // viewModel.fetchMoviesPublisher()
+        Task { await fetchMovies() }
     }
 
     /// Async await solution
