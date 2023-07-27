@@ -10,7 +10,7 @@ protocol MoviesScreenViewModelProtocol: ObservableObject {
     func fetchMovies() async
     func fetchMoviesPublisher()
 
-    func navigateToMovieDetails(_ selectedMovie: Binding<Movie>)
+    func navigateToMovieDetails(_ selectedMovie: Movie)
 }
 
 final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
@@ -30,6 +30,9 @@ final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
         self.navigation = navigation
         self.repository = repository
         self.overlayManager = overlayManager
+
+        fetchMoviesPublisher()
+        //Task { await fetchMovies() }
     }
 
     /// Async await solution
@@ -59,7 +62,13 @@ final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
     }
 
     /// SwiftUI-UIKit Hibrid architecture solution in case we remove the SwiftUI navigation
-    func navigateToMovieDetails(_ selectedMovie: Binding<Movie>) {
-        navigation.onNavigateToMovieDetails?(selectedMovie)
+    func navigateToMovieDetails(_ selectedMovie: Movie) {
+        navigation.onNavigateToMovieDetails?(selectedMovie) { [weak self] movie in
+            guard let indexOfMovie = self?.movies.firstIndex(where: { $0.id == movie.id })
+            else { return }
+            self?.movies.modifyElement(atIndex: indexOfMovie) { element in
+                element.isMarked = movie.isMarked
+            }
+        }
     }
 }

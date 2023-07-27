@@ -30,6 +30,7 @@ import SwiftUI
 
 public final class MovieDetailsNavigationProtocolMock: MovieDetailsNavigationProtocol {
     public var onFinish: (() -> Void)?
+    public var onChangeMarkMovie: ((Movie) -> Void)?
 
 public init() {}
 
@@ -81,7 +82,7 @@ public init() {}
 }
 public final class MoviesScreenNavigationProtocolMock: MoviesScreenNavigationProtocol {
     public var onFinish: (() -> Void)?
-    public var onNavigateToMovieDetails: ((Binding<Movie>) -> Void)?
+    public var onNavigateToMovieDetails: ((Movie, @escaping (Movie) -> Void) -> Void)?
 
 public init() {}
 

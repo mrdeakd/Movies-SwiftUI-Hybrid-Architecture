@@ -34,8 +34,8 @@ public final class MoviesCoordinator: Coordinator {
             print("Finished")
         }
 
-        module.navigation.onNavigateToMovieDetails = { [weak self] movie in
-            self?.goToMovieDetailsScreen(movie: movie)
+        module.navigation.onNavigateToMovieDetails = { [weak self] movie, completion in
+            self?.goToMovieDetailsScreen(movie: movie, completion: completion)
         }
 
         navigationController.pushViewController(
@@ -44,11 +44,15 @@ public final class MoviesCoordinator: Coordinator {
         )
     }
 
-    private func goToMovieDetailsScreen(movie: Binding<Movie>) {
+    private func goToMovieDetailsScreen(movie: Movie, completion: @escaping ((Movie) -> Void)) {
         var module = factory.createMovieDetailsScreen(movie: movie)
 
         module.navigation.onFinish = {
             print("Finished")
+        }
+
+        module.navigation.onChangeMarkMovie = { movie in
+            completion(movie)
         }
 
         navigationController.pushViewController(

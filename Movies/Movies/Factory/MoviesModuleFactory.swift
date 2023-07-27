@@ -5,7 +5,7 @@ protocol MoviesModuleFactoryProtocol {
     func createMoviesScreen(repository: MoviesRepositoryProtocol)
     -> (viewController: UIViewController, navigation: MoviesScreenNavigationProtocol)
 
-    func createMovieDetailsScreen(movie: Binding<Movie>)
+    func createMovieDetailsScreen(movie: Movie)
     -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol)
 }
 
@@ -30,7 +30,7 @@ final class MoviesModuleFactory: MoviesModuleFactoryProtocol {
         return (UIHostingController(rootView: view), navigation)
     }
 
-    func createMovieDetailsScreen(movie: Binding<Movie>) -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol) {
+    func createMovieDetailsScreen(movie: Movie) -> (viewController: UIViewController, navigation: MovieDetailsNavigationProtocol) {
         let navigation = MovieDetailsNavigation()
         let viewModel = MovieDetailsScreenViewModel(
             navigation: navigation,

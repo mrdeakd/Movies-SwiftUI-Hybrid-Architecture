@@ -10,17 +10,18 @@ protocol MovieDetailsScreenViewModelProtocol: ObservableObject {
 class MovieDetailsScreenViewModel: MovieDetailsScreenViewModelProtocol {
     private let navigation: MovieDetailsNavigation
 
-    @Binding var movie: Movie
+    @Published var movie: Movie
 
     init(
         navigation: MovieDetailsNavigation,
-        movie: Binding<Movie>
+        movie: Movie
     ) {
         self.navigation = navigation
-        self._movie = movie
+        self.movie = movie
     }
 
     func markMovie() {
         movie.isMarked.toggle()
+        navigation.onChangeMarkMovie?(movie)
     }
 }
