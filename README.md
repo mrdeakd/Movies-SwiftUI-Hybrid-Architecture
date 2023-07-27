@@ -4,7 +4,7 @@ Hi! This is an interview example application for browsing the most popular movie
 
 There are two main versions
 
-## 1.0.1
+## 1.0.2
 
  - SwiftUI navigation
  - Async await and Combine calls are both ready to use
