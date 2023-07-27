@@ -4,7 +4,7 @@ Hi! This is an interview example application for browsing the most popular movie
 
 There are two main versions
 
-## 1.0.1
+## 1.0.2
 
  - SwiftUI navigation
  - Async await and Combine calls are both ready to use
@@ -21,7 +21,7 @@ New ideas for the future:
  - Paging as the Backend API call supports paging on the most popular movies.
  - Generate networking layer using Open API.
 
-## 2.0.0
+## 2.0.1
 
 *Pretty much the same as 1.** versions, but I will add the differences here.
 
@@ -91,6 +91,8 @@ I chose **Merging** instead of **Rebasing**, because I developed it by myself so
 I did create **pull request**, but since it was just me there was no one else to **review my code**, so I did it myself.
 
 **Gitflow** gives a decent way to handle branches and features, bugs, and fixes so I used it. I had a main branch with development and feature, bug branches. Every feature branch was merged into the development and when I released the 1.0.1 on merging it to the main branch. Currently, I have the 2.0.0 version on development. I also had a hotfix on the main branch as it should happen there.
+
+Normally we would get a **token** or **api key** from the backend server or somewhere else. For sure we should not upload it to a public repository. For the example app the **ApiConfig** contains it.
 
 I have a **Trello Board** where I had my tasks that I was working on. 
 [Trello board](https://trello.com/invite/b/4NHizS4I/ATTI4eb3c464bd4964d7dd48250ce5c6d2a337FAA1DE/movies-app)
