@@ -1,3 +1,4 @@
+import Combine
 import Common
 @testable import Movies
 import XCTest
@@ -33,15 +34,42 @@ class MoviesScreenViewModelTests: XCTestCase {
         )
     }
 
-    func test_onAppear_shouldCallGetMostPopularMovies() async {
+    private func setupRepositoryStubs() {
+        sut = MoviesScreenViewModel(
+            navigation: navigation,
+            repository: repository,
+            overlayManager: overlayManager
+        )
+    }
+
+    func test_onInit_shouldGetMostPopularMoviesFromAsync() async {
         repository.getMostPopularMoviesStub = {
             Movie.movieListMock
+        }
+        repository.getMostPopularMoviesPublisherStub = {
+            Just(Movie.movieListMock)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
         }
 
         await sut.fetchMovies()
 
         XCTAssertTrue(repository.getMostPopularMoviesCalled)
         XCTAssertEqual(repository.getMostPopularMoviesCallsCount, 1)
+        XCTAssertEqual(sut.movies, Movie.movieListMock)
+    }
+
+    func test_onInit_shouldGetMostPopularMoviesFromPublisher() {
+        repository.getMostPopularMoviesPublisherStub = {
+            Just(Movie.movieListMock)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        }
+
+        sut.fetchMoviesPublisher()
+
+        XCTAssertTrue(repository.getMostPopularMoviesPublisherCalled)
+        XCTAssertEqual(repository.getMostPopularMoviesPublisherCallsCount, 1)
         XCTAssertEqual(sut.movies, Movie.movieListMock)
     }
 }

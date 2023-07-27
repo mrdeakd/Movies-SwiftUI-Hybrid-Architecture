@@ -8,7 +8,9 @@ import UIKit
 import AppKit
 #endif
 
+import Combine
 import Common
+import SwiftUI
 
 @testable import Movies
 
@@ -26,6 +28,12 @@ import Common
 
 
 
+public final class MovieDetailsNavigationProtocolMock: MovieDetailsNavigationProtocol {
+    public var onFinish: (() -> Void)?
+
+public init() {}
+
+}
 public final class MoviesRepositoryProtocolMock: MoviesRepositoryProtocol {
 
 public init() {}
@@ -52,9 +60,28 @@ public init() {}
         }
     }
 
+    //MARK: - getMostPopularMoviesPublisher
+
+    public var getMostPopularMoviesPublisherCallsCount = 0
+    public var getMostPopularMoviesPublisherCalled: Bool {
+        getMostPopularMoviesPublisherCallsCount > 0
+    }
+    public var getMostPopularMoviesPublisherReturnValue: AnyPublisher<[Movie], Error>!
+    public var getMostPopularMoviesPublisherStub: (() -> AnyPublisher<[Movie], Error>)?
+
+    public func getMostPopularMoviesPublisher() -> AnyPublisher<[Movie], Error> {
+        getMostPopularMoviesPublisherCallsCount += 1
+        if let getMostPopularMoviesPublisherStub = getMostPopularMoviesPublisherStub {
+            return getMostPopularMoviesPublisherStub()
+        } else {
+            return getMostPopularMoviesPublisherReturnValue
+        }
+    }
+
 }
 public final class MoviesScreenNavigationProtocolMock: MoviesScreenNavigationProtocol {
     public var onFinish: (() -> Void)?
+    public var onNavigateToMovieDetails: ((Binding<Movie>) -> Void)?
 
 public init() {}
 

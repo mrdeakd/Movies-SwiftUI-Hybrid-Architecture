@@ -15,6 +15,14 @@ public class OverlayManager: OverlayManagerProtocol {
         self.alertHandler = appDependency.makeAlertHandler()
     }
 
+    public func showLoading() {
+        loadingHandler.showLoading()
+    }
+
+    public func hideLoading() {
+        loadingHandler.hideLoading()
+    }
+
     public func asyncRequestWithLoading<T>(
         request: () async throws -> T,
         onLoaded action: @escaping (T) -> Void

@@ -13,6 +13,7 @@ struct MoviesScreenView<ViewModel: MoviesScreenViewModelProtocol>: View {
                 NavigationLink(destination: destinationView(using: $movie)) {
                     MovieListItemView(movie: movie)
                         .padding(.trailing, .s8)
+                        //.onTapGesture { viewModel.navigateToMovieDetails($movie) }
                 }
                 .padding(.trailing, .s16)
                 .listRowInsets(EdgeInsets())
@@ -20,7 +21,10 @@ struct MoviesScreenView<ViewModel: MoviesScreenViewModelProtocol>: View {
             .navigationTitle(Str.Navigation.title)
         }
         .navigationViewStyle(.stack)
-        .task { await viewModel.fetchMovies() }
+        .task {
+            viewModel.fetchMoviesPublisher()
+            //Task { await fetchMovies() }
+        }
     }
 
     func destinationView(using movie: Binding<Movie>) -> some View {

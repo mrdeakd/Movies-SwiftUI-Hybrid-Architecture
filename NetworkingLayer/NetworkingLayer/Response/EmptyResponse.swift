@@ -1,1 +1,1 @@
-public struct EmptyResponse: Response {}
+struct EmptyResponse: Response {}

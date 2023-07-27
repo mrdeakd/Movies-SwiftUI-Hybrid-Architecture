@@ -7,6 +7,8 @@ output:
 
 args:
   autoMockableImports:
+    - Combine
     - Common
+    - SwiftUI
   autoMockableTestableImports:
     - Movies

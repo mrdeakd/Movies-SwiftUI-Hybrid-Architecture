@@ -1,5 +1,4 @@
 import Foundation
-import Utils
 
 enum NetworkError: Error {
     case invalidURL
@@ -14,18 +13,18 @@ extension NetworkError: LocalizedError {
         switch self {
         case .invalidURL:
             return NSLocalizedString(
-                Str.networkErrorInvalidUrl,
-                comment: Str.networkErrorInvalidUrlComment
+                Str.NetworkError.invalidUrl,
+                comment: Str.NetworkError.invalidUrlComment
             )
         case .invalidServerResponse:
             return NSLocalizedString(
-                Str.networkErrorInvalidServerResponse,
-                comment: Str.networkErrorInvalidServerResponseComment
+                Str.NetworkError.invalidServerResponse,
+                comment: Str.NetworkError.invalidServerResponseComment
             )
         case .notFound:
             return NSLocalizedString(
-                Str.networkErrorNotFound,
-                comment: Str.networkErrorNotFoundComment
+                Str.NetworkError.notFound,
+                comment: Str.NetworkError.notFoundComment
             )
         }
     }

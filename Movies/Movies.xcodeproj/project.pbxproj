@@ -319,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				558208CE2A7139620020C3BF /* OverlayManager.swift */,
-				558208DA2A7139750020C3BF /* OverlayManagerMock.swift */,
 				558208CF2A7139620020C3BF /* OverlayManagerProtocol.swift */,
 			);
 			path = OverlayManager;
@@ -340,6 +339,7 @@
 				558209812A7151DC0020C3BF /* Models */,
 				558209822A7151E10020C3BF /* ViewModels */,
 				55820A652A71CC6E0020C3BF /* Mock.swift */,
+				558208DA2A7139750020C3BF /* OverlayManagerMock.swift */,
 			);
 			path = MoviesMocks;
 			sourceTree = "<group>";
