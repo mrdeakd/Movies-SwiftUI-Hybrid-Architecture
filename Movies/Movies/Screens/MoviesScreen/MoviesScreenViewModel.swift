@@ -9,7 +9,7 @@ protocol MoviesScreenViewModelProtocol: ObservableObject {
 
     func fetchMovies() async
     func fetchMoviesPublisher()
-
+    func navigateToMovieDetails(_ selectedMovie: Movie)
 }
 
 final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
