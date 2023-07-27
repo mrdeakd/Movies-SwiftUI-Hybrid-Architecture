@@ -20,6 +20,7 @@ New ideas for the future:
  - Some sort of SwiftUI navigation could be used like FlowStack to have a manageable navigation solution
  - Paging as the Backend API call supports paging on the most popular movies.
  - Generate networking layer using Open API.
+ - Consider DI framework
 
 ## 2.0.1
 
@@ -64,7 +65,7 @@ After that, we can install pod dependencies using bundle
 
 > bundle exec pod install
 
-The project has Github actions CI/CD solution for building the app and running the tests. The Workflow is defined in the **swift.yml** file.
+The project has a Github actions CI/CD solution for building the app and running the tests. The Workflow is defined in the **swift.yml** file.
 
 It uses Fastlane for testing purposes and simulator builds. The simulator build is a shell script.
 
