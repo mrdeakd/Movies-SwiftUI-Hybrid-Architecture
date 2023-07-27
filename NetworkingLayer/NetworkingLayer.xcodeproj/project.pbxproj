@@ -22,7 +22,6 @@
 		55820A222A7197FA0020C3BF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A202A7197FA0020C3BF /* Response.swift */; };
 		55820A262A7198190020C3BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55820A282A7198190020C3BF /* Localizable.strings */; };
 		55820A352A7198F40020C3BF /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A342A7198F40020C3BF /* Localizable.swift */; };
-		55820A3B2A719C600020C3BF /* ApiPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A3A2A719C600020C3BF /* ApiPaths.swift */; };
 		55820A4E2A71A82C0020C3BF /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A4D2A71A82C0020C3BF /* MovieDTO.swift */; };
 		55820A502A71A83F0020C3BF /* GenresDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A4F2A71A83F0020C3BF /* GenresDTO.swift */; };
 		55820A522A71A86D0020C3BF /* AllGenresDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55820A512A71A86D0020C3BF /* AllGenresDTO.swift */; };
@@ -59,7 +58,6 @@
 		55820A202A7197FA0020C3BF /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		55820A272A7198190020C3BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55820A342A7198F40020C3BF /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
-		55820A3A2A719C600020C3BF /* ApiPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPaths.swift; sourceTree = "<group>"; };
 		55820A4D2A71A82C0020C3BF /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
 		55820A4F2A71A83F0020C3BF /* GenresDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresDTO.swift; sourceTree = "<group>"; };
 		55820A512A71A86D0020C3BF /* AllGenresDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGenresDTO.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				55820A092A7197B60020C3BF /* RequestProtocol.swift */,
 				55820A0A2A7197B70020C3BF /* RequestType.swift */,
 				55820A082A7197A50020C3BF /* APIManager */,
-				55820A3A2A719C600020C3BF /* ApiPaths.swift */,
 			);
 			path = NetworkingLayer;
 			sourceTree = "<group>";
@@ -438,7 +435,6 @@
 				55820A0E2A7197B70020C3BF /* ApiConstants.swift in Sources */,
 				55820A1D2A7197E80020C3BF /* CustomParser.swift in Sources */,
 				55820A4E2A71A82C0020C3BF /* MovieDTO.swift in Sources */,
-				55820A3B2A719C600020C3BF /* ApiPaths.swift in Sources */,
 				55820A142A7197BE0020C3BF /* APIManagerProtocol.swift in Sources */,
 				55820A222A7197FA0020C3BF /* Response.swift in Sources */,
 				55820A1A2A7197DB0020C3BF /* MostPopularMoviesDTO.swift in Sources */,

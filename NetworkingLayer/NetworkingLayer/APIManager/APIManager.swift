@@ -14,13 +14,19 @@ public class APIManager: APIManagerProtocol {
         AppLogger.shared.info(String(decoding: data, as: UTF8.self), category: .network)
         AppLogger.shared.info(response, category: .network)
 
-        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+        if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
             switch httpResponse.statusCode {
             case 404:
-                AppLogger.shared.error(NetworkError.notFound.localizedDescription, category: .network)
+                AppLogger.shared.error(
+                    NetworkError.notFound.localizedDescription,
+                    category: .network
+                )
                 throw NetworkError.notFound
             default:
-                AppLogger.shared.error(NetworkError.invalidServerResponse.localizedDescription, category: .network)
+                AppLogger.shared.error(
+                    NetworkError.invalidServerResponse.localizedDescription,
+                    category: .network
+                )
                 throw NetworkError.invalidServerResponse
             }
         }
