@@ -17,9 +17,10 @@ There are two main versions
 
 New ideas for the future:
 
- - Some sort of SwiftUI navigation could be used like FlowStack to have a manageable navigation solution
+ - Some sort of SwiftUI navigation could be used like FlowStack to have a manageable navigation solution.
  - Paging as the Backend API call supports paging on the most popular movies.
  - Generate networking layer using Open API.
+ - Consider DI framework.
 
 ## 2.0.1
 
