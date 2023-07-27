@@ -30,6 +30,9 @@ final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
         self.navigation = navigation
         self.repository = repository
         self.overlayManager = overlayManager
+
+        // fetchMoviesPublisher()
+        Task { await fetchMovies() }
     }
 
     /// Async await solution
@@ -58,8 +61,6 @@ final class MoviesScreenViewModel: MoviesScreenViewModelProtocol {
             .store(in: &cancellables)
     }
 
-    /// SwiftUI-UIKit Hibrid architecture solution in case we remove the SwiftUI navigation
-    func navigateToMovieDetails(_ selectedMovie: Binding<Movie>) {
-        navigation.onNavigateToMovieDetails?(selectedMovie)
-    }
+    /// SwiftUI-UIKit Hibrid architecture solution in case we remove the SwiftUI navigation (in 2.0.0 version)
+    func navigateToMovieDetails(_ selectedMovie: Binding<Movie>) {}
 }
