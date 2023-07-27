@@ -80,7 +80,3 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 fastlane/test_report/
-
-# API KEY config
-
-Movies/ApiConfig.xcconfig
