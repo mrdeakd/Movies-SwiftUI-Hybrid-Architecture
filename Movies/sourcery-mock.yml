@@ -10,5 +10,3 @@ args:
     - Combine
     - Common
     - SwiftUI
-  autoMockableTestableImports:
-    - Movies

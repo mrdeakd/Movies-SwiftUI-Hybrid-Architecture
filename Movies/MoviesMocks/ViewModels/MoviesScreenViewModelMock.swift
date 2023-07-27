@@ -13,7 +13,7 @@ class MoviesScreenViewModelMock: MoviesScreenViewModelProtocol {
         print("fetchMoviesPublisher")
     }
 
-    func navigateToMovieDetails(_ selectedMovie: Binding<Movie>) {
+    func navigateToMovieDetails(_ selectedMovie: Movie) {
         print("navigateToMovieDetails with \(selectedMovie)")
     }
 }

@@ -17,6 +17,7 @@ class MoviesScreenViewModelTests: XCTestCase {
         repository = .init()
         overlayManager = OverlayManagerMock()
 
+        setupInitialRepositoryStubs()
         setupSut()
     }
 
@@ -34,40 +35,42 @@ class MoviesScreenViewModelTests: XCTestCase {
         )
     }
 
-    private func setupRepositoryStubs() {
-        sut = MoviesScreenViewModel(
-            navigation: navigation,
-            repository: repository,
-            overlayManager: overlayManager
-        )
-    }
-
-    func test_onInit_shouldGetMostPopularMoviesFromAsync() async {
+    private func setupInitialRepositoryStubs() {
         repository.getMostPopularMoviesStub = {
             Movie.movieListMock
         }
-        repository.getMostPopularMoviesPublisherStub = {
-            Just(Movie.movieListMock)
-                .setFailureType(to: Error.self)
-                .eraseToAnyPublisher()
-        }
+    }
 
+    func test_fetchMovies_shouldGetMostPopularMoviesFromAsync() async {
+        /// Given
+        sut.movies = []
+
+        /// When
         await sut.fetchMovies()
 
+        /// Then
         XCTAssertTrue(repository.getMostPopularMoviesCalled)
-        XCTAssertEqual(repository.getMostPopularMoviesCallsCount, 1)
+        XCTAssertEqual(repository.getMostPopularMoviesCallsCount, 2)
         XCTAssertEqual(sut.movies, Movie.movieListMock)
     }
 
-    func test_onInit_shouldGetMostPopularMoviesFromPublisher() {
+    func test_onViewModelInit_shouldGetMostPopularMoviesFromPublisher() {
+        /// Given
+        let getMostPopularMoviesStubCalled = XCTestExpectation(description: "Call getMostPopularMoviesStub")
+        sut.movies = []
+
         repository.getMostPopularMoviesPublisherStub = {
-            Just(Movie.movieListMock)
+            getMostPopularMoviesStubCalled.fulfill()
+            return Just(Movie.movieListMock)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
 
+        /// When
         sut.fetchMoviesPublisher()
 
+        /// Then
+        wait(for: [getMostPopularMoviesStubCalled], timeout: .defaultTestExpectationTimeout)
         XCTAssertTrue(repository.getMostPopularMoviesPublisherCalled)
         XCTAssertEqual(repository.getMostPopularMoviesPublisherCallsCount, 1)
         XCTAssertEqual(sut.movies, Movie.movieListMock)
