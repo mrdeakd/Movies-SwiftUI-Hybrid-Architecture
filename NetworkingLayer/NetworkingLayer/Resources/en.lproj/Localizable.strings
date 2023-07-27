@@ -1,0 +1,7 @@
+// MARK: - NetworkError
+"error.networkError.invalidUrl" = "Invalid URL {--} Developer Error";
+"error.networkError.invalidUrlComment" = "invalidURL";
+"error.networkError.invalidServerResponse" = "Server problem, please try again later!";
+"error.networkError.invalidServerResponseComment" = "invalidServerResponse";
+"error.networkError.notFound" = "Can't find items for this search!";
+"error.networkError.notFoundComment" = "notFound";

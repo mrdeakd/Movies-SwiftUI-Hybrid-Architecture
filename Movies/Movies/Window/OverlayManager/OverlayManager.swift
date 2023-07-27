@@ -10,9 +10,17 @@ public class OverlayManager: OverlayManagerProtocol {
     private let loadingHandler: LoadingHandler
     private let alertHandler: AlertHandler
 
-    public init(appDependency: AppDependency) {
+    public init(appDependency: WindowDependencyProtocol) {
         self.loadingHandler = appDependency.makeLoadingHandler()
         self.alertHandler = appDependency.makeAlertHandler()
+    }
+
+    public func showLoading() {
+        loadingHandler.showLoading()
+    }
+
+    public func hideLoading() {
+        loadingHandler.hideLoading()
     }
 
     public func asyncRequestWithLoading<T>(

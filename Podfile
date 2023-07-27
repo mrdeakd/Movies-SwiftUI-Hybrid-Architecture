@@ -14,6 +14,7 @@ workspace 'Movies.xcworkspace'
 def developmentPods
   pod 'SwiftGen'
   pod 'SwiftLint'
+  pod 'Sourcery'
 end
 
 def basePods
@@ -76,6 +77,34 @@ target 'Common' do
   script_phase(ScriptPhase.swiftlint)
 
   target 'CommonTests' do
+    script_phase(ScriptPhase.swiftlint)
+  end
+end
+
+target 'NetworkingLayer' do
+  project 'NetworkingLayer/NetworkingLayer.xcodeproj'
+
+  basePods
+  developmentPods
+
+  script_phase(ScriptPhase.swiftgen)
+  script_phase(ScriptPhase.swiftlint)
+
+  target 'NetworkingLayerTests' do
+    script_phase(ScriptPhase.swiftlint)
+  end
+end
+
+target 'DataLayer' do
+  project 'DataLayer/DataLayer.xcodeproj'
+
+  basePods
+  developmentPods
+
+  script_phase(ScriptPhase.swiftgen)
+  script_phase(ScriptPhase.swiftlint)
+
+  target 'DataLayerTests' do
     script_phase(ScriptPhase.swiftlint)
   end
 end

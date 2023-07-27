@@ -1,10 +1,13 @@
 import SwiftUI
 
 public struct WindowManager {
-    private weak var appDependency: AppDependency?
     private weak var navigationController: UINavigationController?
+    private let appDependency: WindowDependencyProtocol?
 
-    public init(appDependency: AppDependency, navigationController: UINavigationController) {
+    public init(
+        appDependency: WindowDependencyProtocol,
+        navigationController: UINavigationController
+    ) {
         self.appDependency = appDependency
         self.navigationController = navigationController
     }

@@ -1,0 +1,1 @@
+struct EmptyResponse: Response {}

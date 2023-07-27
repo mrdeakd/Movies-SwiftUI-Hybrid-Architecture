@@ -5,7 +5,7 @@ public struct InfoItemView: View {
     typealias Str = Rsc.InfoItemView
 
     enum Layout {
-        static let imageSize: CGSize = .init(width: .su16, height: .su16)
+        static let imageSize: CGSize = .init(width: .s16, height: .s16)
     }
 
     var title: String
@@ -15,18 +15,18 @@ public struct InfoItemView: View {
     var didFinish: (() -> Void)?
 
     public var body: some View {
-        HStack(alignment: .top, spacing: .su20) {
+        HStack(alignment: .top, spacing: .s20) {
             VStack(alignment: .leading) {
                 Text(title)
-                    .font(.system(size: .su16, weight: .bold, design: .serif))
+                    .font(.system(size: .s16, weight: .bold, design: .serif))
                     .foregroundColor(.white)
                 if let message = message {
                     Text(message)
-                        .font(.system(size: .su14, weight: .bold, design: .serif))
+                        .font(.system(size: .s14, weight: .bold, design: .serif))
                         .foregroundColor(.white)
                 }
             }
-            .padding(.top, .su4)
+            .padding(.top, .s4)
             Spacer()
             if let didFinish = didFinish {
                 Button(action: didFinish, label: {
@@ -38,7 +38,7 @@ public struct InfoItemView: View {
                 })
             }
         }
-        .padding(.su24)
+        .padding(.s24)
         .frame(maxWidth: .infinity)
         .background(UI.Asset.mediumGreen.swiftUIColor)
         .cornerRadius(cornerRadius)
